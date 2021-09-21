@@ -7,6 +7,6 @@ import com.capstone.entity.User;
 
 public interface UserRepository extends JpaRepository <User, String>{
 	
-	@Query("SELECT U FROM USER U WHERE U.email = ?1 AND U.password = ?2")
+	@Query("SELECT U FROM User U Where U.email = ?1 AND U.password = ?2")
 	User loginUser (String email, String password);
 }

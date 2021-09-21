@@ -18,13 +18,15 @@ public class Monster {
 	private String namePicture;
 	@Column(name="type")
 	private String type;
+	@Column(name="type_picture")
+	private String typePicture;
 	@Column(name="element")
 	private String element;
 	@Column(name="element_picture")
 	private String elementPicture;
 	@ManyToOne
 	@JoinColumn(name="gene_name")
-	private String geneName;
+	private Gene gene;
 	
 	
 	//no argument constructor
@@ -55,6 +57,14 @@ public class Monster {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	public String getTypePicture() {
+		return typePicture;
+	}
+	
+	public void setTypePicture(String typePicture) {
+		this.typePicture = typePicture;
+	}
 
 	public String getElement() {
 		return element;
@@ -73,11 +83,14 @@ public class Monster {
 	}
 
 	//comment out to avoid bidirectional loop	
-//	public String getGeneName() {
-//		return geneName;
+//	public Gene getGene() {
+//		return gene;
 //	}
 //
-//	public void setGeneName(String geneName) {
-//		this.geneName = geneName;
+//	public void setGene(Gene gene) {
+//		this.gene = gene;
 //	}
+
+	
+
 }
